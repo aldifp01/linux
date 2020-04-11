@@ -1,4 +1,7 @@
-Cheat Sheet Quest II
+H   H
+HHHHH
+H   H
+
 ##############################################################################################
 1. Linux Command Line
 ##############################################################################################
@@ -250,6 +253,7 @@ atau bisa juga dengan format berikut
        -tput bold   -> menebalkan output
        -tput sgr0   -> menghilangkan bold pada output
       
+      
 ##############################################################################################
 3. Git
 ##############################################################################################
@@ -284,3 +288,69 @@ Perintah pada Git
 -git config color.ui true       -> menggunakan output git penuh warna
 -git config format.pretty oneline -> menunjukkan log satu baris per komit
 -git add -i                     -> menggunakan penambahan interaktif
+
+
+##############################################################################################
+4. Markdown
+##############################################################################################
+source -> https://www.petanikode.com/markdown-pemula/
+
+#Heading
+#format untuk membuat heading pada markdown adalah
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+dengan maksimal 6 level, selain dengan pemberian level di dalam kurung, heading juga bisa dibuat dengan tanda minus seperti
+heading 1
+---------
+heading 2
+---------
+
+#untuk memformat text, dapat dilakukan dengan cara berikut
+**BBBBB** -> untuk menebalkan text     
+*////*	  -> untuk memiringkan text
+~~ZZZZ~~  -> untuk mencoret text
+
+#untuk membuat hyperlink dapat dilakukan dengan cara berikut
+-[link ke website](<url dari website>)
+atau bisa juga dengan langsung menulis urlnya, sehingga akan langsung menjadi hyperlink
+#untuk menyisipkan gambar, dapat dilakukan dengan cara berikut
+-![Gambar yang diinputkan](<url dari gambar>)
+
+#Untuk membuat list, dapat menggunakan simbol * dan -, kondisinya ataupun order akan ditentukan oleh indentasinya seperti
+* list1
+* list2
+	*list3
+	
+maka pada list 3, akan terbentuk lingkaran kosong, sedangakan list 1 dan 2 lingkarannya akan bewarna hitam penuh
+
+#untuk membuat ceklist pada markdown, dibuat dengan format berikut
+- [x] List1
+- [ ] List2
+- [ ] List3
+- [x] List4
+
+#untuk menulis inline code, kode ditulis pada kutip satu,contohnya
+Perintah `apt-get` adalah perintah untuk menginstall paket di Ubuntu.
+maka perintah 'apt-get' akan dihighligh
+
+#untuk menulis source code pada markdown, ditambahkan ```` pada awal dan akhir source code, contohnya
+```java
+class HelloWorld{
+    public static void main(String[] argumen){
+        System.out.println("Hello World!");
+    }
+}
+```
+
+#untuk membuat tabel, tinggal dibuat dengan menggunakan - dan |, contohnya
+| X | Y |
+| - | - |
+| A | A |
+| A | O |
+maka, akan terbentuk tabel yang memuat isi X dan Y serta kontennya
+
+#untuk membuat garis horizontal, dapat dibuat dengan menggunakan ---,contohnya
+Judul
+---
+Isi
