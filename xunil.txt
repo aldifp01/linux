@@ -1,0 +1,286 @@
+Cheat Sheet Quest II
+##############################################################################################
+1. Linux Command Line
+##############################################################################################
+source -> https://www.udemy.com/course/linux-tips-and-tricks/learn/lecture/9526536#overview
+
+-$ -> non superuser/root user
+-# -> superuser 
+
+-uptime           -> untuk menunjukan berapa lama sistem telah berjalan
+	    -uptime -V      -> menampilkan versi dari uptime
+-w                -> untuk menampilkan user yang sedang aktif,proses dan informasinya secara lengkap seperti asal user 
+                     dan lain2
+	    -w -h           -> menampilkan user yang sedang aktif tetapi tanpa header
+	    -w -s           -> menampilkan user yang sedang aktif tanpa menampilkan informasi mengenai CPU
+	    -w -f           -> menampilkan user yang sedang aktif tanpa menampilkan asal user
+	    -w -V           -> menampilkan versi dari w
+-users            -> untuk menampilkan user tetapi hanya berisikan nama user yang aktif saja
+-who              -> untuk menampilkan user yang login tetapi dilengkapi dengan ip adress dan waktu login
+	    -who -b         -> menampilkan waktu terakhir kali user reboot
+	    -who -r         -> menampilkan run level user
+	    -who -a         -> menampilkan semua informasi mengenai user
+	    -who -all       -> sama seperti who -a
+-whoami           -> menampilkan user
+-ls               -> untuk membaca list file yang bisa dibaca pada directory
+	    -ls -ltr        -> menampilkan file yang terakhir kali dimodifikasi
+-touch            -> membuat file kosong
+-crontab          -> untuk menjadwalkan perintah yang repetitif
+	    -crontab -e     -> menampilkan file crontab, nantinya dibuat jadwal pada file ini yang dibuat dalam bentuk format
+	                       menit jam dan 3 bintang berikutnya bisa untuk menentukan apakah file akan dibaca setiap hari 
+                         pada setiap bulan, terakhir adalah command yang akan dijalankan secara repetitif
+	    -crontab -l     -> menampilkan semua perintah yang sudah dijadwal
+-less             -> untuk menampilkan isi dari file tetapi lebih sedikit
+-more             -> untuk menampilkan isi file dan lebih lengkap daripada less
+-cp               -> untuk mencopy file
+-ls               -> menampilkan isi dari directory
+-mv               -> memindahkan file, sama seperti cut pada windows
+-cat              -> untuk menampilkan isi dari file
+-cd               -> untuk membuka directory
+	                   -jika hanya cd saja maka akan kembali ke home
+-pwd              -> menampilkan address dari lokasi terminal
+-sort             -> mengurutkan 
+	     -sort -r -> mengurutkan secara terbalik
+-ssh              -> untuk login secara remote ke sebuah sistem
+-telnet           -> login ke sebuah sistem namun password bisa dilihat
+-free             -> menampilkan informasi mengenai swap memory dalam bentuk byte
+	     -free -t      -> menampilkan total memory
+-top              -> untuk menampilkan proses yang sedang berjalan, mirip seperti task manager
+-tar              -> untuk mengekstrak file
+	     -tar -cvf     -> untuk kompress
+	     -tar -xvf     -> untuk ekstrak
+-grep             -> untuk mencari file dengan menggunakan pattern
+	     -grep -i      -> mencari file yang terdapat kalimat seperti inputan
+-find             -> mencari file
+-lsof             -> untuk menampilkan informasi mengenai file yang sedang dibuka
+-last             -> untuk menampilkan aktifitas terakhir user
+-ps               -> menampilkan proses dari sistem
+-kill             -> untuk mematikan sebuah proses
+-rm               -> menghapus file
+-mkdir            -> untuk membuat direktori
+-id               -> menampilkan id user dan grup nya
+-group            -> menampilkan semua member dari grup user
+-finger           -> menampilkan informasi user
+-lslogins         -> menampilkan semua user yang ada pada sistem
+	     -lslogins -u  -> untuk menampilkan user saja
+-useradd          -> membuat user
+	     -useradd -u   -> untuk membuat user secara custom
+	     -useradd -G   -> membuat user dan memasukannya ke berbagai macam grup yang diinputkan
+	     -useradd -M   -> membuat user tanpa membuat home directorinya
+	     -useradd -c   -> mengganti nama user
+-passwd           -> mengganti password dari user
+	  -passwd --expire -> membuat password dari user kadaluarsa
+-chage            -> menampilkan informasi dari user mengenai passwordnya
+	      -chage -l     -> menampilkan secara detail
+	      -chage -d     -> menentukan kapan password dari user tersebut kadaluarsa
+	      -chage -E     -> untuk menentukan kapan akun tidak bisa lagi diakses
+	     -chage -w     -> memberikan peringatan waktu masa tenggang kepada user
+	 
+
+##############################################################################################
+2. Bash Scripting
+##############################################################################################
+source -> https://ryanstutorials.net/bash-scripting-tutorial/
+       -> https://pemula.linux.or.id/programming/bash-shell.html
+       -> man bash
+
+#!/bin/bash     -> setiap bash diawali dengan ini
+#format dari bash bisa berupa
+    function functionName {
+      first command
+      second command
+    }
+    
+#bisa juga berupa
+    functionName (){
+      first command
+      second command
+    }
+    
+ #jika dalam satu baris, maka dapat ditulis
+    functionName() { first command; second command; }
+ 
+ beberapa basic command pada bash scripting
+-echo           -> menampilkan output pada terminal
+-man bash       -> menampilkan semua perintah dalam bash scripting
+-which bash     -> menampilkan path dari bash
+    
+===========================
+ Variabel
+===========================
+cara membuat variabel pada bash scripting
+-namavariabel=*konten
+
+spesial variabel pada bash
+$0        - Nama dari bash script
+$1 - $9   - 9 argument pertama pada bash script
+$#        - Berapa banyak argumen yang sudah dilewati oleh bash script
+$@        - Semua argument yang dikirim ke bash script
+$?        - Status keluar pada proses yang sering dijalankan
+$$        - ID proses dari script yang sedang berjalan
+$USER     - Username dari pengguna script
+$HOSTNAME - Hostname dari komputer yang menjalankan script
+$SECONDS  - Berapa detik waktu yang telah berlalu sejak script dijalankan
+$RANDOM   - Mengembalikan nilai acak
+$LINENO   - Kembali ke suatu baris pada bash script
+
+===========================
+ Input output
+===========================
+-read variabel  -> Untuk membaca inputan
+-echo variabel  -> untuk menampilkan output
+-/dev/stdin     -> File yang bisa dibaca untuk mendapatkan STDIN untuk bash script
+
+===========================
+ Aritmatika
+===========================
+Untuk menjalankan aritmatika, ditambahkan kata "let" didepannya, sehingga formatnya
+-let<ekspresi aritmatika>
+contoh
+let x=3+6
+
+bisa juga dengan menggunakan "expr", bedanya expr harus menggunakan spasi diantaranya
+-expr item1 operator item2
+contoh
+expr 3 + 6
+
+-$(( expression )) -> digunakan untuk menyimpan nilai dari operasi yang dilakukan sehingga 
+                      bisa digunakan untuk operasi berikutnya
+-${#variable}      -> menampilkan panjang dari variabel
+
+operator aritmatika pada bash scripting
++, -, \*, /	-> operasi kabataku
+var++	      -> Menambahkan nilai variabel sebanyak 1
+var--	      -> Mengurangi nilai variabel sebanyak 1
+%	Modulus   -> Operasi modulo/mencari sisa hasil bagi
+
+===========================
+ Kondisi / If Statement
+===========================
+If statement dibuat dalam bentuk sebagai berikut
+    if [ <some test> ]
+    then
+        <commands>
+    fi
+    
+Jika terdapat kondisi lain, maka dibuat dalam bentuk berikut
+    if [ <some test> ]
+      then
+        <commands>
+      else
+        <other commands>
+    fi
+
+Jika kondisi lebih dari 2, dibuat dalam bentuk berikut
+    if [ <some test> ]
+      then
+        <commands>
+      elif [ <some test> ]
+      then
+        <other commands>
+      else
+        <another commands>
+    fi
+    
+Jika ingin membuat statement dalam bentuk switch case, bisa dibuat dalam format berikut
+    case <variable> in
+     <pattern 1>)
+      <commands>
+    ;;
+     <pattern 2>)
+      <other commands>
+    ;;
+    esac
+
+===========================
+ Looping
+===========================
+Format untuk membuat while looping
+  while [ <some test> ]
+  do
+    <commands>
+  done
+  
+ Format untuk repeat until looping
+  until [ <some test> ]
+  do
+    <commands>
+  done
+  
+ Format untuk For looping
+ for var in <list>
+ do
+  <commands>
+ done
+ 
+ Format untuk membuat looping select
+ select var in <list>
+ do
+   <commands>
+ done
+ 
+beberapa kode tambahan pada looping pada bash scripting
+-break        -> untuk keluar dari looping
+-continue     -> untuk melewati sebuah iterasi
+
+===========================
+ Fungsi
+===========================
+format untuk membuat fungsi
+  function_name () {
+    <commands>
+  }
+  
+atau bisa juga dengan format berikut
+ function function_name {
+    <commands>
+  }
+
+-return               -> berguna untuk mengembalikan nilai dari fungsi
+-local<nama>=<nilai>  -> untuk membuat variabel lokal
+
+===========================
+ User Interface
+===========================
+-tput               -> berguna untuk mengontrol kursor di terminal dan memformat konten yang diprint
+       -tput cols   -> untuk menampilkan banyak kolom
+       -tput lines  -> untuk menampilkan banyak baris
+       -tput clear  -> untuk membersihkan terminal
+       -tput cup    -> meletakan kursor pada kolom dan baris yang diberikan
+       -tput bold   -> menebalkan output
+       -tput sgr0   -> menghilangkan bold pada output
+      
+##############################################################################################
+3. Git
+##############################################################################################
+source -> https://rogerdudler.github.io/git-guide/index.id.html
+       -> https://guides.github.com/introduction/git-handbook/
+       
+Perintah pada Git
+-git init                       -> untuk membuat repository baru
+-git clone <path>               -> untuk membuat kopian dari repo 
+        -git clone <user@host>:<path> -> untuk membuat kopian dari repo apabila menggunakan server jarak jauh\
+-git add <namaberkas>           -> untuk melakukan perubahan
+        -git add *
+-git commit -m "text"           -> untuk mengkomit file pada repo lokal tetapi belum untuk repository jarak jauh
+-git push origin <cabang>       -> untuk menyimpan perubahan pada repo lokal ke repo jarak jauh 
+-git remote add origin <server> -> sama seperti git push tetapi ini dilakukan jika repo belum di kloning
+-git checkout -b <nama>         -> untuk membuat cabang/branch baru dan menggunakannya
+-git checkout master            -> untuk kembali ke branch master
+-git branch -d <nama>           -> untuk menghapus branch
+-git push origin <cabang>       -> untuk mengirim branch ke server jarak jauh
+-git pull                       -> untuk memperbarui repository lokal dengan komit terbaru
+-git merge <cabang>             -> untuk menggabungkan branch lain dengan branch yang sedang aktif
+-git add <file>                 -> untuk menambahkan berkas secara manual
+-git diff <asal> <tujuan>       -> untuk mencek perubahan yang sudah dibuat namun belum dikomit pada repo jarak jauh
+-git log                        -> untuk menampilkan history dari repositori
+        -git log --author=<nama>      -> untuk menampilkan repositori dari author tertentu
+        -git log --pretty=oneline     -> untuk menampilkan log yang dijadikan satu baris 
+        -git log --name-status        -> melihat berkas yang berubah
+        -git log --help               -> menampilkan parameter lain yang tersedia untuk command log
+-git checkout --<file>          -> untuk mengembalikan/mengundo jika terjadi kesalahan
+-git fetch origin -git reset --hard origin/master -> untuk menghapus perubahan dan komit seutuhnya
+-gitk                           -> GUI git bawaan
+-git config color.ui true       -> menggunakan output git penuh warna
+-git config format.pretty oneline -> menunjukkan log satu baris per komit
+-git add -i                     -> menggunakan penambahan interaktif
