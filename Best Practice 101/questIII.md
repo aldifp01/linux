@@ -82,20 +82,33 @@
    menggunakan tools berikut
    
    	-HxD
+	
 	-010 Editor
+	
 	-Hex Workshop
+	
 	-HexFiend
+	
 	-Hiew
+	
 	-hecate
 	
    Untuk diassembler dapat menggunakan tools berikut
+   
    	-IDA Pro
+	
 	-GHIDRA
+	
 	-Binary Ninja
+	
 	-Radare
+	
 	-Hopper
+	
 	-Capstone
+	
 	-objdump
+	
 	-fREedom
 	
    Contoh Soal
