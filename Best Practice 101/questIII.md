@@ -80,7 +80,7 @@
 	   
    Contoh Soal
    
-   	1. Untuk soal vault-door-training pada picoCTF, nanti kita diberikan file java, kita cukup tinggal membukanya dan berikut
+       1. Untuk soal vault-door-training pada picoCTF, nanti kita diberikan file java, kita cukup tinggal membukanya dan berikut
       	adalah source codenya
       
       	import java.util.*;
@@ -105,14 +105,15 @@
   			}
 		}
 
-      Untuk ini kita tinggal  menjalankan program ini dan memasukan input yang sama dengan checkPassword, yakni
+        Untuk ini kita tinggal  menjalankan program ini dan memasukan input yang sama dengan checkPassword, yakni
       
-      picoCTF{w4rm1ng_Up_w1tH_jAv4_fcb79c48f5b}
+        picoCTF{w4rm1ng_Up_w1tH_jAv4_fcb79c48f5b}
      
-     apabila menghasilkan output Access granted maka flag yang kita masukan adalah benar sehingga flag untuk soal ini adalah
+        apabila menghasilkan output Access granted maka flag yang kita masukan adalah benar sehingga flag untuk soal ini adalah
      
-     picoCTF{w4rm1ng_Up_w1tH_jAv4_fcb79c48f5b}
+        picoCTF{w4rm1ng_Up_w1tH_jAv4_fcb79c48f5b}
 
+       2. 
 
 
 
