@@ -78,6 +78,26 @@
    	-> untuk c++ mungkin agak sulit, karena nantinya akan berformat ELF, oleh karena itu untuk membuka file ini 
 	   dapat menggunakan software IDA yang nantinya akan menampilkan kode assembly dari file ELF tersebut
 	   
+   selain menggunakan bahasa program biasa, reverse engineering dapat juga berupa membaca kode hexadecimal sehingga dapat
+   menggunakan tools berikut
+   
+   	-HxD
+	-010 Editor
+	-Hex Workshop
+	-HexFiend
+	-Hiew
+	-hecate
+	
+   Untuk diassembler dapat menggunakan tools berikut
+   	-IDA Pro
+	-GHIDRA
+	-Binary Ninja
+	-Radare
+	-Hopper
+	-Capstone
+	-objdump
+	-fREedom
+	
    Contoh Soal
    
        1. Untuk soal vault-door-training pada picoCTF, nanti kita diberikan file java, kita cukup tinggal membukanya dan berikut
@@ -187,7 +207,11 @@
 
 
 Referensi
-forensic
+
 https://trailofbits.github.io/ctf/forensics/
+
 https://bitvijays.github.io/LFC-Forensics.html
+
 https://github.com/apsdehal/awesome-ctf
+
+https://medium.com/@vignesh4303/reverse-engineering-resources-beginners-to-intermediate-guide-links-f64c207505ed
