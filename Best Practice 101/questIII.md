@@ -36,21 +36,22 @@
      
      
  Contoh soal
+ 
     1. misalnya pada soal unzip di picoCTF, untuk menyelesaikannya kita tinggal memasukan command
-       unzip flag.zip
-		
+       unzip flag.zip	
        maka nanti akan muncul flagnya yakni "unz1pp1ng_1s_3a5y"
-	 
+       
     2. misalnya untuk soal glory in the garden di picoCTF, ada gambar taman bunga, apabila dicoba langsung dengan 
-       menggunakan  semua tools untuk stegano, maka tidak memunculkan flag sama sekali, hal ini karena flag terdapat di dalam string file tersebut sehingga kita tinggal memasukan command berikut
-
+       menggunakan  semua tools untuk stegano, maka tidak memunculkan flag sama sekali, hal ini karena flag 
+       terdapat di dalam string file tersebut sehingga kita tinggal memasukan command berikut
 	 strings garden.jpg
-	
-   nanti akan muncul flag berikut di akhir string nya
+       
+       
+   	nanti akan muncul flag berikut di akhir string nya
 
-   Here is a flag "picoCTF{more_than_m33ts_the_3y3b7FBD20b}"
+	Here is a flag "picoCTF{more_than_m33ts_the_3y3b7FBD20b}"
 
-   maka kita memperoleh flagnya, agar tidak mengeluarkan string lain yang tidak penting kita bisa menggunakan 
+   	maka kita memperoleh flagnya, agar tidak mengeluarkan string lain yang tidak penting kita bisa menggunakan 
 	 command grep -i ditambah dengan kalimat pico (karena format flagnya adalah picoCTF) 
 	 
 	 maka nanti akan memunculkan 1 baris string saja yakni string bagian flagnya yakni
@@ -78,30 +79,31 @@
 	   dapat menggunakan software IDA yang nantinya akan menampilkan kode assembly dari file ELF tersebut
 	   
    Contoh Soal
-   1. Untuk soal vault-door-training pada picoCTF, nanti kita diberikan file java, kita cukup tinggal membukanya dan berikut
-      adalah source codenya
+   
+   	1. Untuk soal vault-door-training pada picoCTF, nanti kita diberikan file java, kita cukup tinggal membukanya dan berikut
+      	adalah source codenya
       
-      import java.util.*;
+      	import java.util.*;
 
-class VaultDoorTraining {
-  public static void main(String args[]) {
-    VaultDoorTraining vaultDoor = new VaultDoorTraining();
-    Scanner scanner = new Scanner(System.in); 
-    System.out.print("Enter vault password: ");
-    String userInput = scanner.next();
-    String input = userInput.substring("picoCTF{".length(),userInput.length()-1);
+		class VaultDoorTraining {
+ 	 		public static void main(String args[]) {
+   			 VaultDoorTraining vaultDoor = new VaultDoorTraining();
+   			 Scanner scanner = new Scanner(System.in); 
+   	 		 System.out.print("Enter vault password: ");
+   	 		 String userInput = scanner.next();
+   	 		 String input = userInput.substring("picoCTF{".length(),userInput.length()-1);
     
-    if (vaultDoor.checkPassword(input)) {
-      System.out.println("Access granted.");
-    } else {
-      System.out.println("Access denied!");
-    }
-  }
+    			if (vaultDoor.checkPassword(input)) {
+   			   System.out.println("Access granted.");
+    			} else {
+    			  System.out.println("Access denied!");
+    			}
+  			}
   
-  public boolean checkPassword(String password) {
-      return password.equals("w4rm1ng_Up_w1tH_jAv4_fcb79c48f5b");
-  }
-}
+ 		 public boolean checkPassword(String password) {
+      			return password.equals("w4rm1ng_Up_w1tH_jAv4_fcb79c48f5b");
+  			}
+		}
 
       Untuk ini kita tinggal  menjalankan program ini dan memasukan input yang sama dengan checkPassword, yakni
       
