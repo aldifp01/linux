@@ -1,5 +1,5 @@
  
-| [yeet](#3-yeet-cbt-300)|
+| [yeet](#1-yeet-cbt-300)|
 
 
 
