@@ -73,4 +73,10 @@ enter your password
 4988
 password is valid
 ```
-
+<details>
+  <summary>Flag</summary>
+  
+  ```
+  4988
+  ```
+</details>
