@@ -1,5 +1,5 @@
 # CRACKME 2
-### SOAL
+### DIKET
 Find the super-secret password! and use it to obtain the flag
 
 ### JAWAB

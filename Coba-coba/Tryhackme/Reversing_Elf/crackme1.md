@@ -1,5 +1,5 @@
 # CRACKME 1
-### SOAL
+### DIKET
 Let's start with a basic warmup, can you run the binary?
 
 ### JAWAB
