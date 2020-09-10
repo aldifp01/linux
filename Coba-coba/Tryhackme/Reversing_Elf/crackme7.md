@@ -1,6 +1,6 @@
 # CRACKME7
 ### DIKET
-
+Analyze the binary to get the flag
 
 ### JAWAB
 kita coba buka dengan ghidra karena dengan radare2 hanya menampilkan assemblynya saja dan tidak begitu mudah dimengerti, berikut source codenya
